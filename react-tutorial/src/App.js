@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css'
+import Component1 from './functional/component1'
 class App extends Component {
 
   state = {
@@ -13,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+{/* 
         <button onClick={()=>{this.increment()}}>Increment</button>
         <div>
           Div 1: {this.state.counter}
@@ -25,7 +26,10 @@ class App extends Component {
 
         <div>
           Div 3:
-        </div>
+        </div> */}
+
+        React
+        <Component1 />
     </div>
     );
   }
