@@ -16,16 +16,31 @@ class Container1 extends Component{
         this.setState({stateprop1: this.state.stateprop1+" changed", stateprop2: this.state.stateprop2+1})
     }
 
+    handleChange = (event) =>{
+        console.log(event.target.value)
+    }
+
+    handleSubmit = (event) =>{
+        event.preventDefault();
+        console.log(event.target.name.value)
+
+    }
+
     render() {
         return(
             <div>
-                {/* {this.props.date} */}
+                {/* {this.props.date}
                 <button onClick={()=>this.changeState()}>Change State</button>
                 <br/>
                 {this.state.stateprop1}
                 <br/>
                 {this.state.stateprop2}
-                <hr></hr>
+                <hr></hr> */}
+                <form onSubmit={this.handleSubmit}>
+                    <label>Name</label>
+                    <input id="name" onChange={this.handleChange} type="text"/>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         )
     }
