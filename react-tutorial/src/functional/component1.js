@@ -2,7 +2,9 @@ import React from 'react'
 
 const Component1 = props => (
     <div>
-    Component 1
+    Welcome, {props.name}! 
+    <br></br>
+    {props.qs}
     </div>
 );
 
