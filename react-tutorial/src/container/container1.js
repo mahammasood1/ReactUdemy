@@ -7,7 +7,8 @@ class Container1 extends Component{
 
         this.state={
             stateprop1:"Our initial state",
-            stateprop2: 5
+            stateprop2: 5,
+            value: ""
         }
     }
 
@@ -18,6 +19,7 @@ class Container1 extends Component{
 
     handleChange = (event) =>{
         console.log(event.target.value)
+        this.setState({value: event.target.value})
     }
 
     handleSubmit = (event) =>{
@@ -36,9 +38,11 @@ class Container1 extends Component{
                 <br/>
                 {this.state.stateprop2}
                 <hr></hr> */}
+                {this.state.value} 
                 <form onSubmit={this.handleSubmit}>
-                    <label>Name</label>
+                    <label>Name: </label>
                     <input id="name" onChange={this.handleChange} type="text"/>
+                    <br/>
                     <button type="submit">Submit</button>
                 </form>
             </div>
