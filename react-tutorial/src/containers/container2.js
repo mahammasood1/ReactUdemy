@@ -4,6 +4,9 @@ import * as ACTION_TYPES from '../store/actions/action_types';
 import * as ACTIONS from '../store/actions/actions';
 
 import { connect } from 'react-redux';
+import Auth from '../utils/auth';
+
+const auth = new Auth()
 
 class Container2 extends Component {
     render() {
@@ -20,6 +23,9 @@ class Container2 extends Component {
                 <button onClick={() => this.props.action_creator3(user_text)}>Dispatch Action Creator 3</button>
 
                 {this.props.user_text ? <h1>{this.props.user_text}</h1> : null}
+                <hr />
+
+                <button onClick={() => auth.login()}>Login</button>
             </div>
         )
     }

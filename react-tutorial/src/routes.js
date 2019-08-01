@@ -5,6 +5,7 @@ import Component2 from './functional/component2';
 import Component3 from './functional/component3';
 
 import Container1 from './containers/container1';
+import Container2 from './containers/container2';
 import Header from './containers/header';
 import history from './utils/history';
 
@@ -18,7 +19,7 @@ class Routes extends Component {
                     <div>
                         <Header />
                         <Switch>
-                            <Route exact path="/" component={Container1} />
+                            <Route exact path="/" component={Container2} />
                             <Route path="/component/:id" render={(props) => <Component1 {...props} />} />
                         </Switch>
                     </div>
