@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css'
 import Component1 from './functional/component1'
-import Container1 from './container/container1'
-import Container2 from './container/container2'
+import Container1 from './containers/container1'
+import Container2 from './containers/container2'
+import Routes from './routes'
 
 class App extends Component {
 
@@ -46,15 +47,17 @@ class App extends Component {
         </div>
        */}
 
-        <h2>React</h2>
-        <hr />
+        {/* <h2>React</h2> */}
+        {/* <hr /> */}
         {/* {<Container1 date="31st Jul, 2019" />} */}
-        {<Container2 />}
+        {/* {<Container2 />} */}
         {/* <Component1 name="Maham" qs="How are you today?" /> } */}
-        <hr />
+        {/* <hr /> */}
 
         {/* {this.renderFunction1()} */}
         {/* {this.Arr1.map( (item, index) => (<this.renderListItem key={index} item={item}/>))} */}
+
+        <Routes />
       </div>
     );
   }

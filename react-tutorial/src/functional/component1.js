@@ -2,9 +2,10 @@ import React from 'react'
 
 const Component1 = props => (
     <div>
-    Welcome, {props.name}! 
+    {/* Welcome, {props.name}! 
     <br></br>
-    {props.qs}
+    {props.qs} */}
+    Component {props.match.params.id}
     </div>
 );
 

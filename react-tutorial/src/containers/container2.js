@@ -5,7 +5,7 @@ import * as ACTIONS from '../store/actions/actions';
 
 import { connect } from 'react-redux';
 
-class Container1 extends Component {
+class Container2 extends Component {
     render() {
         const user_text = "Good Morning!"
 
@@ -42,4 +42,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Container1);
+export default connect(mapStateToProps, mapDispatchToProps)(Container2);
