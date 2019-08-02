@@ -3,6 +3,7 @@ import React,  {Component} from 'react';
 import Component1 from './functional/component1';
 import Component2 from './functional/component2';
 import Component3 from './functional/component3';
+import Callback from './functional/callback';
 
 import Container1 from './containers/container1';
 import Container2 from './containers/container2';
@@ -20,6 +21,7 @@ class Routes extends Component {
                         <Header />
                         <Switch>
                             <Route exact path="/" component={Container2} />
+                            <Route path="/callback" component={Callback} />
                             <Route path="/component/:id" render={(props) => <Component1 {...props} />} />
                         </Switch>
                     </div>
