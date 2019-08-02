@@ -25,7 +25,7 @@ export default class Auth {
             if(authResult) {
                 localStorage.setItem('access_token', authResult.accessToken)
                 localStorage.setItem('id_token', authResult.idToken)
-                console.log('hi')
+                console.log(localStorage.getItem('access_token'))
                 
                 let expiresAt = JSON.stringify((authResult.expiresIn * 1000 + new Date().getTime()));
                 localStorage.setItem('expiresAt', expiresAt)
@@ -44,6 +44,6 @@ export default class Auth {
 
     isAuthenticated = () => {
         let expiresAt = JSON.parse(localStorage.getItem('expiresAt'));
-        return new Date.getTime() < expiresAt
+        return new Date().getTime() < expiresAt
     }
 }
