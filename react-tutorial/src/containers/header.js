@@ -15,6 +15,8 @@ class Header extends Component {
     render() {
         return (
             <div>
+                WELCOME!
+                <hr/>
                 <Link to='/' style={{ padding: '5px' }}>
                     Home
                 </Link>

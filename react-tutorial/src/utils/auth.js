@@ -1,4 +1,6 @@
-import auth0 from 'auth0-js'
+import auth0 from 'auth0-js';
+import history from './history';
+import authcheck from './authcheck';
 
 export default class Auth {
     constructor() {
@@ -7,12 +9,11 @@ export default class Auth {
             clientID: 'FNyHPT6XQzMgVgNDQ0xHw7wqd3DFGgZD',
             redirectUri: 'http://localhost:3000/callback',
             responseType: 'token id_token',
-            audience: 'https://' + 'dev-xqxytnsy.auth0.com' + '/userinfo',
+            audience: 'https://dev-xqxytnsy.auth0.com/userinfo',
             scope: 'openid profile email',
             sso: false
         })
-
-        this.login = this.login.bind(this);
+      this.login = this.login.bind(this);
     }  
 
     login = () => {
@@ -24,9 +25,11 @@ export default class Auth {
             if(authResult) {
                 localStorage.setItem('access_token', authResult.accessToken)
                 localStorage.setItem('id_token', authResult.idToken)
+                console.log('hi')
                 
                 let expiresAt = JSON.stringify((authResult.expiresIn * 1000 + new Date().getTime()));
                 localStorage.setItem('expiresAt', expiresAt)
+                setTimeout(() => {history.replace('/authcheck')}, 200)
             }else{
                 console.log(err)
             }
@@ -34,16 +37,13 @@ export default class Auth {
     }
 
     logout = () => {
-        localStorage.setItem('access_token')
-        localStorage.setItem('id_token')
-        localStorage.setItem('expiresAt')
+        localStorage.removeItem('access_token')
+        localStorage.removeItem('id_token')
+        localStorage.removeItem('expiresAt')
     }
 
-   
-    
-
-  
-
-
-
+    isAuthenticated = () => {
+        let expiresAt = JSON.parse(localStorage.getItem('expiresAt'));
+        return new Date.getTime() < expiresAt
+    }
 }

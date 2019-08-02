@@ -6,7 +6,7 @@ import * as ACTIONS from '../store/actions/actions';
 import { connect } from 'react-redux';
 import Auth from '../utils/auth';
 
-const auth = new Auth()
+// const auth = new Auth()
 
 class Container2 extends Component {
     render() {
@@ -25,7 +25,8 @@ class Container2 extends Component {
                 {this.props.user_text ? <h1>{this.props.user_text}</h1> : null}
                 <hr />
 
-                <button onClick={() => auth.login()}>Login</button>
+                <button onClick={() => this.props.auth.login()}>Login</button>
+                
             </div>
         )
     }
