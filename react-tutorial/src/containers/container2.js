@@ -21,12 +21,10 @@ class Container2 extends Component {
                 <button onClick={() => this.props.action_creator1()}>Dispatch Action Creator 1</button>
                 <button onClick={() => this.props.action_creator2()}>Dispatch Action Creator 2</button>
                 <button onClick={() => this.props.action_creator3(user_text)}>Dispatch Action Creator 3</button>
+                <button onClick={() => console.log(this.props.is_authenticated)}>Get User Profile</button>
 
                 {this.props.user_text ? <h1>{this.props.user_text}</h1> : null}
                 <hr />
-
-                <button onClick={() => this.props.auth.login()}>Login</button>
-                
             </div>
         )
     }
@@ -35,7 +33,9 @@ class Container2 extends Component {
 function mapStateToProps(state) {
     return {
         stateprop1: state.reducer1.stateprop1,
-        user_text: state.user_reducer.user_text
+        user_text: state.user_reducer.user_text,
+        user_profile: state.auth_reducer.profile,
+        is_authenticated: state.auth_reducer.is_authenticated
     }
 }
 
