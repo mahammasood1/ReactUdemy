@@ -36,7 +36,7 @@ export default class Auth {
                 localStorage.setItem('expiresAt', expiresAt)
                 
                 this.getProfile()
-                setTimeout(() => {history.replace('/authcheck')}, 2000)
+                setTimeout(() => {history.replace('/authcheck')}, 1000)
             }else{
                 console.log(err)
             }

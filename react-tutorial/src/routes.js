@@ -8,6 +8,7 @@ import UnauthRedirect from './functional/unauthredirect';
 
 import Container1 from './containers/container1';
 import Container2 from './containers/container2';
+import Container3 from './containers/container3';
 import Header from './containers/header';
 import Profile from './containers/profile';
 import history from './utils/history';
@@ -53,7 +54,7 @@ class Routes extends Component {
                     <div>
                         <Header auth={auth}/>
                         <Switch>
-                            <Route exact path="/" render={() => <Container2 auth={auth} />} />
+                            <Route exact path="/" render={() => <Container3 auth={auth} />} />
                             <Route path="/authcheck" render={() => <AuthCheck auth={auth} />} />
                             <Route path="/redirect" component={UnauthRedirect} />
                             
