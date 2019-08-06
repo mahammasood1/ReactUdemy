@@ -54,7 +54,7 @@ class Routes extends Component {
                     <div>
                         <Header auth={auth}/>
                         <Switch>
-                            <Route exact path="/" render={() => <Container3 auth={auth} />} />
+                            {/* <Route exact path="/" render={() => <Container3 />} /> */}
                             <Route path="/authcheck" render={() => <AuthCheck auth={auth} />} />
                             <Route path="/redirect" component={UnauthRedirect} />
                             
